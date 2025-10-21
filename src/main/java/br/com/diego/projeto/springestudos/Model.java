@@ -10,6 +10,7 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
     private String name;
+    @Column(unique = true)
     private String email;
     private int age;
     @ManyToMany
