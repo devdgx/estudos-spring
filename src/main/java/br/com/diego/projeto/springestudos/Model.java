@@ -12,6 +12,9 @@ public class Model {
     private String name;
     private String email;
     private int age;
+    @ManyToMany
+    @JoinColumn(name = "id_missoes")
+    private  Missoes missoes;
 
     public Model() {
     }
