@@ -8,12 +8,17 @@ public class Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private long Id;
+
+    @Column(name = "nome")
     private String name;
     @Column(unique = true)
     private String email;
+
+    @Column(name = "idade")
     private int age;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "id_missoes")
     private  Missoes missoes;
 
