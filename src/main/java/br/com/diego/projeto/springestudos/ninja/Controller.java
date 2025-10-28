@@ -1,4 +1,4 @@
-package br.com.diego.projeto.springestudos;
+package br.com.diego.projeto.springestudos.ninja;
 
 import org.springframework.web.bind.annotation.*;
 

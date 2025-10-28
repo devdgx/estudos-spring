@@ -1,5 +1,6 @@
-package br.com.diego.projeto.springestudos;
+package br.com.diego.projeto.springestudos.missoes;
 
+import br.com.diego.projeto.springestudos.ninja.Missoes;
 import jakarta.persistence.*;
 
 @Entity
@@ -20,7 +21,7 @@ public class Model {
     private int age;
     @ManyToOne
     @JoinColumn(name = "id_missoes")
-    private  Missoes missoes;
+    private Missoes missoes;
 
     public Model() {
     }

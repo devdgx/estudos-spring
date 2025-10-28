@@ -1,11 +1,11 @@
-package br.com.diego.projeto.springestudos;
+package br.com.diego.projeto.springestudos.ninja;
 
 
+import br.com.diego.projeto.springestudos.missoes.Model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.Banner;
 
 import java.util.List;
 
