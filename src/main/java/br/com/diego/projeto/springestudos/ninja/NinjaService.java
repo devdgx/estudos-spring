@@ -3,6 +3,7 @@ package br.com.diego.projeto.springestudos.ninja;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NinjaService {
@@ -20,6 +21,7 @@ public class NinjaService {
 
     //Buscar ninja por ID
     public NinjaModel buscaPorId(Long id) {
-        return ninjaRepository.findById(id).orElse(null);
+        Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
+        return ninjaPorId.orElse(null);
     }
 }
