@@ -1,6 +1,6 @@
-package br.com.diego.projeto.springestudos.missoes;
+package br.com.diego.projeto.springestudos.ninja;
 
-import br.com.diego.projeto.springestudos.ninja.Missoes;
+import br.com.diego.projeto.springestudos.missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_cadastro")
-public class Model {
+public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
-    private long Id;
+    private long id;
 
     @Column(name = "nome")
     private String name;
@@ -27,6 +27,6 @@ public class Model {
     private int age;
     @ManyToOne
     @JoinColumn(name = "id_missoes")
-    private Missoes missoes;
+    private MissoesModel missoes;
 
 }
