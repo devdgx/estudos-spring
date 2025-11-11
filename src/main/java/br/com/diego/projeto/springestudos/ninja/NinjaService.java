@@ -1,6 +1,5 @@
 package br.com.diego.projeto.springestudos.ninja;
 
-import br.com.diego.projeto.springestudos.missoes.Model;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,12 +14,12 @@ public class NinjaService {
     }
 
     //Listar todos os ninjas
-    public List<Model> listarNinjas(){
+    public List<NinjaModel> listarNinjas(){
         return ninjaRepository.findAll();
     }
 
     //Buscar ninja por ID
-    public Model buscaPorId(Long id) {
+    public NinjaModel buscaPorId(Long id) {
         return ninjaRepository.findById(id).orElse(null);
     }
 }
