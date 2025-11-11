@@ -1,0 +1,7 @@
+2025-11-10 23:03:11.729258-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TB_DIFICULDADE" not found; SQL statement:
+INSERT INTO TB_DIFICULDADE (dificuldade, nome)
+VALUES
+('Fácil', ' Correr '),
+('Média', 'fugir'),
+('Difícil', 'Matar  a fome na africa ') [42102-232]
