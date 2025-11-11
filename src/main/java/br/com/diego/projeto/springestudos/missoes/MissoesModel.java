@@ -2,6 +2,7 @@ package br.com.diego.projeto.springestudos.ninja;
 
 
 import br.com.diego.projeto.springestudos.missoes.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,5 +24,6 @@ public class Missoes {
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List <Model> ninjas;
 }

@@ -1,6 +1,9 @@
 package br.com.diego.projeto.springestudos.ninja;
 
+import br.com.diego.projeto.springestudos.missoes.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping
@@ -17,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping("/Listar")
-    public String listarTodosCadastro(){
+    public List<> listarTodosCadastro(){
         return "Lista de cadastro";
     }
 

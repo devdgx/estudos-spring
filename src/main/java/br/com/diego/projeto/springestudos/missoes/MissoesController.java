@@ -3,13 +3,28 @@ package br.com.diego.projeto.springestudos.missoes;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("missoes")
 public class MissoesController {
 
-    @GetMapping("/ListarMissaoes")
-    public String listarMissaoes(){
-        return "Listar missaoes!";
+    private MissoesService missoesService;
+
+    public MissoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
+
+
+    @GetMapping("/buscarPorId/{id}")
+    public MissoesModel buscarPorId(@PathVariable Long id){
+        return missoesService.buscarPorId(id);
+    }
+
+
+    @GetMapping("/listar")
+    public List<MissoesModel> listarMissaoes(){
+        return missoesService.listarMissoes();
 
     }
     @PostMapping("/criar")
