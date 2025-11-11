@@ -1,7 +1,7 @@
-package br.com.diego.projeto.springestudos.ninja;
+package br.com.diego.projeto.springestudos.missoes;
 
 
-import br.com.diego.projeto.springestudos.missoes.Model;
+import br.com.diego.projeto.springestudos.ninja.NinjaModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Missoes {
+public class MissoesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,5 +25,5 @@ public class Missoes {
 
     @OneToMany(mappedBy = "missoes")
     @JsonIgnore
-    private List <Model> ninjas;
+    private List <NinjaModel> ninjas;
 }
