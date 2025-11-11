@@ -1,13 +1,18 @@
 package br.com.diego.projeto.springestudos.ninja;
 
-import br.com.diego.projeto.springestudos.missoes.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping
-public class Controller {
+@RequestMapping("/Ninja")
+public class NinjaController {
+
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     @GetMapping("/BemVindo")
     public String olaSping(){
@@ -20,16 +25,16 @@ public class Controller {
     }
 
     @GetMapping("/Listar")
-    public List<> listarTodosCadastro(){
-        return "Lista de cadastro";
+    public List<NinjaModel> listarCadastro(){
+        return ninjaService.listarNinjas() ;
     }
 
-    @GetMapping("/BuscarCadastroID")
-    public String buscarPorId(){
-        return "Busca de cadastro";
+    @GetMapping("/BuscarCadastroID/{id}")
+    public NinjaModel buscarPorId( @PathVariable Long id){
+        return ninjaService.buscaPorId(id);
     }
 
-    @PutMapping("/Atualizar Dados")
+    @PutMapping("/Atualizar-Dados")
     public String atualizarCadastro(){
         return "Cadastro Atualizado";
     }
