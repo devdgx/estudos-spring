@@ -20,4 +20,13 @@ public class MissoesService {
     public MissoesModel buscarPorId(Long id){
         return missoesRepository.findById(id).orElse(null);
     }
+
+    public void deletarMissao(Long id){
+        missoesRepository.deleteById(id);
+    }
+
+    //Add missao
+    public MissoesModel criarMissao(MissoesModel novaMissao){
+        return missoesRepository.save(novaMissao);
+    }
 }
