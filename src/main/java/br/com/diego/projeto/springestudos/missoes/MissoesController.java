@@ -28,8 +28,8 @@ public class MissoesController {
 
     }
     @PostMapping("/criar")
-    public String criarMissoes(){
-        return "missao criada!";
+    public MissoesModel criarMissoes(@RequestBody MissoesModel missoesModel){
+        return missoesService.criarMissao(missoesModel);
     }
 
     @PutMapping("/alterar")
@@ -37,8 +37,8 @@ public class MissoesController {
         return "Missao alterada!";
     }
 
-    @DeleteMapping("/deletar")
-    public String deletarMissao(){
-        return "Missao deletada!";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarMissao(@PathVariable Long id){
+        missoesService.deletarMissao(id);
     }
 }
