@@ -39,8 +39,8 @@ public class NinjaController {
         return "Cadastro Atualizado";
     }
 
-    @DeleteMapping("/Deletar")
-    public String deletarCadastroPorId(){
-        return "Cadastro deletado";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarCadastroPorId(@PathVariable Long id){
+         ninjaService.deletarNinjaPorId(id);
     }
 }
