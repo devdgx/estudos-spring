@@ -19,9 +19,9 @@ public class NinjaController {
         return "Ola minha primeira intereção com spring ";
     }
 
-    @PostMapping("/Cadastra")
-    public String criarNovoCadastro(){
-        return "Cadastro finalizado! ";
+    @PostMapping("/Criar")
+    public NinjaModel criarNovoCadastro(@RequestBody NinjaModel ninjaModel){
+        return ninjaService.criarNinja(ninjaModel);
     }
 
     @GetMapping("/Listar")
