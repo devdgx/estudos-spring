@@ -1,6 +1,7 @@
 package br.com.diego.projeto.springestudos.missoes;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -28,5 +29,12 @@ public class MissoesService {
     //Add missao
     public MissoesModel criarMissao(MissoesModel novaMissao){
         return missoesRepository.save(novaMissao);
+    }
+
+    public MissoesModel atualizarMissao(Long id, MissoesModel missoesAtualizada){
+        if (missoesRepository.existsById(id)){
+            missoesAtualizada.setId(id);
+            return missoesRepository.save(missoesAtualizada);
+        }return null;
     }
 }
