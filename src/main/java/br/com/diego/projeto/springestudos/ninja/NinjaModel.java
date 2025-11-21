@@ -20,11 +20,16 @@ public class NinjaModel {
 
     @Column(name = "nome")
     private String name;
+
     @Column(unique = true)
     private String email;
 
+    @Column(name = "rank")
+    private String rank;
+
     @Column(name = "idade")
     private int age;
+
     @ManyToOne
     @JoinColumn(name = "id_missoes")
     private MissoesModel missoes;
