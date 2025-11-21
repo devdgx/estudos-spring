@@ -24,10 +24,10 @@ public class NinjaController {
         return ninjaService.criarNinja(ninjaModel);
     }
 
-    @GetMapping("/Listar")
-    public List<NinjaModel> listarCadastro(){
-        return ninjaService.listarNinjas() ;
-    }
+//    @GetMapping("/Listar")
+//    public List<NinjaModel> listarCadastro(){
+//        return ninjaService.listarNinjas() ;
+//    }
 
     @GetMapping("/BuscarCadastroID/{id}")
     public NinjaModel buscarPorId( @PathVariable Long id){

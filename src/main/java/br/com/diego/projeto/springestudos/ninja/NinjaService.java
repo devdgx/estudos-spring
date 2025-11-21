@@ -2,21 +2,30 @@ package br.com.diego.projeto.springestudos.ninja;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class NinjaService {
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaMapper ninjaMapper, NinjaRepository ninjaRepository) {
+        this.ninjaMapper = ninjaMapper;
         this.ninjaRepository = ninjaRepository;
     }
 
+
+
     //Listar todos os ninjas
-    public List<NinjaModel> listarNinjas(){
-        return ninjaRepository.findAll();
+    public List<NinjaDTO> listarNinjas(){
+        List<NinjaModel> ninjas = ninjaRepository.findAll();
+        return ninjas.stream()
+                .map(ninjaMapper::map)
+                .collect(Collectors.toList());
     }
 
     //Buscar ninja por ID
